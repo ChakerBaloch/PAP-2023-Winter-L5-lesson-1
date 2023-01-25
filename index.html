@@ -32,7 +32,7 @@
         </div>
 
         <div class="machine glider">
-            <img src="images/leonardo-personal.jpg">
+            <img src="images/leonardo-personal.jpeg">
             <h3>Flying Machine Designs 1488</h3>
             <p>For much of his life, <strong>Leonardo da Vinci</strong> was fascinated by the phenomenon of flight. He
                 produced many studies of the flight of birds, as well as plans for several flying machines, including a
@@ -47,7 +47,7 @@
         </div>
 
         <div class="machine balloon">
-            <img src="images/balloon-montgolfier.jpeg">
+            <img src="images/balloon-montgolfier.jpg">
             <h3>First Manned Balloon 1783</h3>
             <p>The Montgolfier brothers, Joseph and Etienne, were French paper manufacturers with an interest in
                 chemistry. Inspired by watching his wife's chemise inflate while drying by the hearth, Joseph conceived
@@ -55,7 +55,7 @@
                 launched on November 21, 1783.</p>
         </div>
         <div class="machine balloon">
-            <img src="images/balloons-1818.jpg">
+            <img src="images/balloons-1818.jpeg">
             <h3>19<sup>th</sup> Century Balloon Designs</h3>
             <p>Gas balloons, using hydrogen or helium, became the most common type from the 1790s until the 1960s.</p>
         </div>
@@ -117,7 +117,7 @@
         </div>
 
         <div class="machine plane">
-            <img src="images/plane-dumont.jpg">
+            <img src="images/plane-dumont.jpeg">
             <h3>Dumont Box Biplane 1906</h3>
             <p>On October 23, 1906, Alberto Santos-Dumont won a competition in Paris by flying his aircraft 200 feet and
                 landing it, although the undercarriage collapsed. The frame was built out of pine and bamboo and was
@@ -148,6 +148,37 @@
 
     <script>
         //Part 3 Javascript sorting function
+        /*
+        My pseudo code
+        Determine which button was clicked
+        Sort the machine types according to the types provided
+        Create if clicked button is equal to the type of the machine type
+        sort.machine(type). 
+
+        or create an array of machines
+        use a for loop to iterate through it to match the selected button type
+        sort the same list of machine type on screen
+        
+        */
+       const all_machines = document.querySelectorAll('.machine');
+       const all_anchorTags = document.querySelectorAll('a');
+       console.log(all_machines, all_anchorTags);
+
+       //stub in the function and call it
+       function sort(event){
+        let category = event.target.id;
+        all_machines.forEach(function(card) {
+            let cardClass = card.classList
+            if(!cardClass.contains(category)){
+                card.style.display = "none";
+            } else{
+                card.style.display = "block";
+            }});
+        }
+        all_anchorTags.forEach(function(tag){
+        tag.addEventListener('click',sort);
+        });
+    
 
     </script>
 </body>
